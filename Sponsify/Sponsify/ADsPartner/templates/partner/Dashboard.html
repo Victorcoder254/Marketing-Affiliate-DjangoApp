@@ -1,0 +1,76 @@
+{%extends 'partner/base.html'%} {%block content%}{% load static %}
+<div class="containerD">
+  <div class="card text-center" id="card">
+    <div class="card-header">
+      <ul class="nav nav-pills card-header-pills">
+        <li class="nav-item">
+          <a
+            class="nav-link"
+            href="{% url 'YourListings' username=request.user.username  %}"
+            >Your Listings</a
+          >
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'ListAds' %}">Create Ad</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'Edit_profile' %}">Edit Profile</a>
+        </li>
+      </ul>
+    </div>
+    <div class="card-body" style="display: block">
+      <h5 class="card-title">Your Dashboard</h5>
+      <div style="display: block; flex-direction: column">
+        {% if profile.photo %}
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div
+            class="image-container"
+            style="width: 80px; height: 80px; border-radius: 50%"
+          >
+            <img
+              src="{{ profile.photo.url }}"
+              class="rounded float-top img-fluid"
+              alt="..."
+              style="width: 200px; height: auto; display: block"
+            />
+          </div>
+        </div>
+        {% else %}
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div
+            class="image-container"
+            style="width: 80px; height: 80px; border-radius: 50%"
+          >
+            <img
+              src="{%static 'styles/icons8-person-64.png'%}"
+              class="rounded float-top img-fluid"
+              alt="..."
+              style="width: 200px; height: auto; display: block"
+            />
+          </div>
+        </div>
+        {% endif %}
+        <div style="text-align: center">
+          <span><small>{{profile.business.username}}</small></span>
+        </div>
+      </div>
+      <p>Total number of ads you have listed: {{ total }}</p>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

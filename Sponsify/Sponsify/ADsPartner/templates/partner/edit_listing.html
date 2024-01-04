@@ -1,0 +1,81 @@
+{% extends 'partner/base.html' %} {% block content %}
+<div class="card" id="CSignup">
+  <div class="card-body">
+    <div
+      class="div"
+      style="font-size: large; text-align: center; margin: 2% auto"
+    >
+      <span>Edit Your Ad-Listing</span>
+      <a
+        class="btn btn-primary"
+        href="{% url 'detail' pk=listing.pk %}"
+        role="button"
+        style="margin: 0 1%"
+        >Cancel</a
+      >
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="input-group">
+        <span class="input-group-text">Product_image</span>
+        <input
+          type="file"
+          aria-label="Last name"
+          class="form-control"
+          name="pro_image"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Description</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="description"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Specifications</span>
+        <input
+          type="text"
+          aria-label="Email"
+          class="form-control"
+          name="specifics"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Pricing</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="price"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Contact</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="contact"
+          required
+        />
+      </div>
+      <br />
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>
+{% endblock %}

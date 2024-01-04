@@ -1,0 +1,51 @@
+{%extends 'partner/base.html'%} {%block content%}
+<div class="containerL" style="width: 500px">
+  <div class="card" style="width: 100%">
+    <img
+      src="{{ detail.product.url }}"
+      class="card-img-top"
+      alt="..."
+      style="height: 250px"
+    />
+    <div class="card-body">
+      <span><small>{{detail.description}}</small></span
+      ><br />
+      <span><small>{{detail.specifications}}</small></span
+      ><br />
+      <span><small>{{detail.price_offers}}</small></span
+      ><br />
+      <div
+        class="button"
+        style="
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: row;
+        "
+      >
+        <a
+          class="btn btn-primary"
+          href="{% url 'edit_listing' pk=detail.pk %}"
+          role="button"
+          style="margin: 0 1%"
+          >Edit</a
+        >
+        <a
+          class="btn btn-primary"
+          href="{% url 'DeleteListing' pk=detail.pk  %}"
+          role="button"
+          style="margin: 0 1%"
+          >Delete</a
+        >
+        <a
+          class="btn btn-primary"
+          href="{% url 'YourListings' username=username %}"
+          role="button"
+          style="margin: 0 1%"
+          >Back</a
+        >
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

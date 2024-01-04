@@ -1,0 +1,117 @@
+{% extends 'partner/base.html' %} {% block content %}
+<div class="card" id="CSignup">
+  <div class="card-body">
+    <div
+      class="div"
+      style="font-size: large; text-align: center; margin: 2% auto"
+    >
+      <span>Create Your Profile</span>
+    </div>
+    <form method="POST" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="input-group">
+        <span class="input-group-text">Name</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="name"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Photo</span>
+        <input
+          type="file"
+          aria-label="Last name"
+          class="form-control"
+          name="photo"
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Industry</span>
+        <input
+          type="text"
+          aria-label="First name"
+          class="form-control"
+          name="industry"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Description</span>
+        <input
+          type="text"
+          aria-label="Email"
+          class="form-control"
+          name="description"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Location</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="location"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Email</span>
+        <input
+          type="email"
+          aria-label="Password"
+          class="form-control"
+          name="email"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Phone</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="phone"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">Website</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="website"
+          required
+        />
+      </div>
+      <br />
+      <div class="input-group">
+        <span class="input-group-text">SocialMedia</span>
+        <input
+          type="text"
+          aria-label="Password"
+          class="form-control"
+          name="social"
+          required
+        />
+      </div>
+      <br />
+      <div class="d-grid gap-2 col-6 mx-auto">
+        <button class="btn btn-primary" type="submit">Submit</button>
+      </div>
+      <br />
+    </form>
+  </div>
+</div>
+{% endblock %}

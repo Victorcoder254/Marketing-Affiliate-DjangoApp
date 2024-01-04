@@ -1,0 +1,112 @@
+{%extends 'home/base.html'%} {%block content%}{% load static %}
+<div class="containerA" style="width: 100%">
+  <div class="card text-center" id="cardAccount">
+    <div class="card-body" style="display: block">
+      <div style="display: block; flex-direction: column">
+        {% if profile_user.user_image %}
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <div
+            class="image-container"
+            style="width: 80px; height: 80px; border-radius: 50%"
+          >
+            <img
+              src="{{ profile_user.user_image.url }}"
+              class="rounded float-top img-fluid"
+              alt="..."
+              style="width: 200px; height: auto; display: block"
+            />
+            <span
+              ><small style="font-size: medium"
+                >{{profile_user.user.username}}</small
+              ></span
+            >
+            <span><small>0{{profile_user.phone_number}}</small></span
+            ><br />
+          </div>
+        </div>
+        {% else %}
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+          "
+        >
+          <div
+            class="image-container"
+            style="width: 80px; height: 80px; border-radius: 50%"
+          >
+            <img
+              src="{%static 'styles/icons8-person-64.png'%}"
+              class="rounded float-top img-fluid"
+              alt="..."
+              style="width: 200px; height: auto; display: block"
+            />
+          </div>
+        </div>
+        {% endif %}
+        <br /><br />
+        <span
+          ><small style="font-size: large"
+            ><u>Your Social Accounts</u></small
+          ></span
+        ><br />
+        <div
+          style="
+            width: 100%;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: center;
+          "
+        >
+          <span>
+            <img
+              src="{% static 'statics/icons8-tiktok-96.png' %}"
+              alt="Tiktok"
+              width="50px"
+              style="margin-right: 2%; margin-left: 3%"
+            />
+            <small>{{profile_user.tt_account}}</small></span
+          ><br />
+          <span>
+            <img
+              src="{% static 'statics/icons8-youtube-96.png' %}"
+              alt="Youtube"
+              width="50px"
+              style="margin-right: 2%; margin-left: 3%"
+            /><small>{{profile_user.yt_account}}</small></span
+          ><br />
+          <span>
+            <img
+              src="{% static 'statics/icons8-instagram-96.png' %}"
+              alt="Instagram"
+              width="50px"
+              style="margin-right: 2%; margin-left: 3%"
+            />
+            <small>{{profile_user.ig_account}}</small></span
+          ><br />
+          <span>
+            <img
+              src="{% static 'statics/icons8-facebook-96.png' %}"
+              alt="Facebook"
+              width="50px"
+              style="margin-right: 2%; margin-left: 3%"
+            />
+            <small>{{profile_user.fb_account}}</small></span
+          ><br />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endblock %}

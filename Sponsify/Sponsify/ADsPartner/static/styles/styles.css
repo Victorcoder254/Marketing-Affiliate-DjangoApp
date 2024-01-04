@@ -1,0 +1,29 @@
+body {
+  padding-top: 70px;
+}
+.container {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+#CSignup {
+  width: 100%;
+}
+@media screen and (min-width: 800px) {
+  #CSignup {
+    width: 50%;
+  }
+}
+.containerD {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.containerL {
+  margin: 1% 2%;
+  width: 300px; /* Set the width */
+  height: 400px;
+}
